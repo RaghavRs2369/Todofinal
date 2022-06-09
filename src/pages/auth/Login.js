@@ -106,9 +106,13 @@ export default function Login() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
+  const style = {
+      backgroundColor: "#bbdefb"
+  }
+
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" style={style}>
         <CssBaseline />
         <Box
           sx={{
