@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 export default function TodoLayout() {
   return (
     <div>
-      <Container maxWidth='sm'>
+      <Container maxWidth='md'>
         <Outlet />
       </Container>
     </div>

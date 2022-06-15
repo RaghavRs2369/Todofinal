@@ -84,7 +84,7 @@ export const deleteTodoAction = createAsyncThunk(
     async (payload, { rejectWithValue }) => {
         try{
             const response = await api.methods.deleteData(
-              `https://jsonplaceholder.typicode.com/toods/${payload.id}`
+              `https://jsonplaceholder.typicode.com/todos/${payload.id}`
             )
             if(response.status === 200) {
                 return payload.id;
@@ -174,6 +174,8 @@ const slice = createSlice({
         [deleteTodoAction.fulfilled]: (state, {payload}) => {
             let temp = [...state.todos]
             let index = temp.findIndex((a) => a.id === payload);
+            temp.splice(index, 1);
+            temp.push(payload);
             state.todos = temp
             state.isLoading = false
         },
